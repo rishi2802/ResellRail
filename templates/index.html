@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="{% static '.\proj.css' %}?{% now 'U' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+	  
+
+    <title>ResellRail</title>
+
+  	<!--Font Awesome Icons-->
+  	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- Google Fonts---> 
+  	<link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css"> 
+   
+
+
+  </head>
+  <center>
+  <body>
+ 
+    
+    <!-- HERO -->
+    <section id="hero" data-type="background" data-speed="5">
+      <article>
+        <div class="container clearfix">
+          <div class="row">
+            
+            <div class="col-sm-3"></div>
+          
+            <div class="col-sm-6 hero-text">
+              <h1 class="shadow">ResellRail</h1>
+              <h3 class="shadow1">An innovative web platform that facilitates the reselling of train tickets</h3>
+             <form action="log" method="post">
+              {% csrf_token %}
+              <input type="submit" class="btn btn-lg btn-danger" value="Login" id="logbtn">
+            </form>
+            <form action="sign" method="post">
+              {% csrf_token %}
+              <input type="submit" class="btn btn-lg btn-danger" value="Sign Up" id="signbtn">
+            </form>
+
+            </div><!--col-->
+
+          </div><!--row-->
+        </div><!--container-->
+      </article>
+
+    </section><!--hero-->
+
+  
+      <!-- MAIN INFO -->
+    <section id="main-info">
+      <div class="container">
+        <div class="section-header">
+          <div class="table">
+            <i class="fa fa-train fa-4x icon-group" aria-hidden="true"></i>
+            <i class="fa fa-ticket fa-4x icon-group" aria-hidden="true"></i>
+          </div>
+
+          <h2 id="offer">What We Offer</h2>
+        </div><!-- section-header -->
+         <center>
+          <div id="text">
+            <p class="lead text-center">ResellRail facilitates the reselling of validated train tickets.</p>
+          <div class="row">
+          <div class="col-sm-4">
+                <p class="para">Welcome to ResellRail, the ultimate platform for reselling train tickets! Our web platform is designed to make reselling train tickets a hassle-free experience for both sellers and buyers. With ResellRail, you can easily put up your train tickets for sale and find buyers who are interested in purchasing them.
+                  Our platform analyzes the seller's ticket information, validates it, and provides all the necessary details for potential buyers to see. This ensures that the tickets being sold are legitimate and that buyers can purchase with confidence. ResellRail provides a secure and convenient way to resell your train tickets, eliminating the need for you to deal with the hassle of reselling your tickets on your own.
+                  Whether you're looking to sell your train tickets quickly or you're searching for last-minute deals, ResellRail has got you covered. Our platform is easy to use and accessible to anyone, making it the perfect solution for both occasional and frequent travelers.
+                  Thank you for choosing ResellRail for all your train ticket reselling needs!
+                </p>
+          </div>
+          
+          </div><!-- col -->
+        
+
+
+          </div><!-- col -->
+        </center>
+      </div>
+    </section><!-- main-info -->
+    
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+    <script src="./files.js"></script>
+    
+   </body>
+</center>
+</html>

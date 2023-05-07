@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./verify.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body onload="hidestuff()">
+    <div id="main">
+      <div id="verify">Verify tickets</div>
+      <div id="text">
+        TakeMyTickets need to verify your ticket purchase. Make sure you forward
+        the tickets from the mail ID you used to sign-up.
+      </div>
+      <div id="but1"><p>1</p></div>
+      <div id="copy">Copy our email address</div>
+      <div id="cont1">
+        <div id="copyicon" onclick="copy()"><i class="fa fa-copy"></i></div>
+        <input type="text" value="resellrail@gmail.com" id="emailcopy" />
+      </div>
+      <div id="line"></div>
+      <div id="but2"><p id="p1">2</p></div>
+      <div id="fwd">Forward your ticket confirmation email</div>
+      <div id="fwdbut" onclick="show()">I've forwarded my tickets</div>
+      <div id="line2"></div>
+      <div id="but3"><p id="p2">3</p></div>
+      <div id="wait">Wait for verification</div>
+      <div id="waittxt">
+        Your Ticket is being verified. Check Your inbox for verification status
+      </div>
+      <div class="loader" id="spinner"></div>
+      <div id="h1but"><span id="i1">&#10003;</span></div>
+      <div id="h2but"><span id="i2">&#10003;</span></div>
+      <div id="h3but"><span id="i3">&#10003;</span></div>
+      <div id="copied">
+        <p id="t">Mail ID Copied</p>
+        <span id="round"><span id="green">&#10003;</span></span>
+      </div>
+      <form action="back" method="post">
+        {% csrf_token %}
+        <input
+          type="submit"
+          class="btn btn-lg btn-danger"
+          value="GO BACK TO HOME PAGE"
+          id="continue"
+        />
+      </form>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>

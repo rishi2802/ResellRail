@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static './index.css' %}?{% now 'U' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="side">
+      <div id="tmt">Resell Rail</div>
+      <div id="cur"></div>
+      <div id="cur1"></div>
+      <div id="cur2">
+        <div id="curtext">Trains</div>
+      </div>
+      <div id="admtxt">{{name}}</div>
+      <div id="admin">{{em}}</div>
+      <form action="logout" method="post">
+        {% csrf_token %}
+        <div id="frame">
+          <div id="rect">
+            <input type="submit" id="frt" value="Log Out" />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="right">
+      <div id="grp6">
+        <div id="search">
+          <label for="gsearch" id="ls">Search</label>
+          <input
+            type="search"
+            id="gsearch"
+            name="gsearch"
+            placeholder="Search for Destination"
+          />
+        </div>
+        <div id="city">
+          <label for="cities" id="ls">Class</label>
+
+          <select name="cities" id="cities">
+            <option disabled selected value>All</option>
+            <option value="Chennai">First-Class A/C</option>
+            <option value="Mumbai">Second-Class A/C</option>
+            <option value="Bangalore">Third-Class A/C</option>
+          </select>
+        </div>
+        <div id="status">
+          <label for="stat" id="ls" class="st">Date</label>
+
+          <input type="date" name="stat" id="stat" />
+        </div>
+      </div>
+      <form action="new" method="post">
+        {% csrf_token %}
+        <div id="addev">
+          <input type="submit" value="+ Search Train" id="addevbtn" />
+        </div>
+      </form>
+      <div id="table">
+        <div id="tc">
+          <table>
+            <tr>
+              <th>PNR</th>
+              <th>Train Name</th>
+              <th>Boarding Station</th>
+              <th>Date</th>
+              <th>Departure Time</th>
+              <th>Arrival time</th>
+              <th>Class</th>
+              <th>Price</th>
+            </tr>
+
+            {% for i in lists %}
+
+            <tr>
+              <td><p>{{i.url}}</p></td>
+              <td>
+                <p id="pname">{{i.event}}</p>
+                <p id="pven">{{i.venue}}</p>
+              </td>
+              <td>{{i.artist}}</td>
+              <td>{{i.city}}</td>
+              <td>{{i.date}}</td>
+              <td>{{i.time}}</td>
+              <td>{{i.created}}</td>
+              <td>{{i.status}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+    <form action="sell" method="post">
+      {% csrf_token %}
+      <input type="submit" value="SELL TICKET" id="searchbtn" />
+    </form>
+  </body>
+</html>
